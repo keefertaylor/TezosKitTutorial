@@ -8,24 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		779A9C1823026DF2004C6575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A9C1723026DF2004C6575 /* AppDelegate.swift */; };
-		779A9C1A23026DF2004C6575 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A9C1923026DF2004C6575 /* ViewController.swift */; };
+		779A9C1A23026DF2004C6575 /* TezosKitDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A9C1923026DF2004C6575 /* TezosKitDemoViewController.swift */; };
 		779A9C1F23026DF8004C6575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 779A9C1E23026DF8004C6575 /* Assets.xcassets */; };
 		779A9C2223026DF8004C6575 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779A9C2023026DF8004C6575 /* LaunchScreen.storyboard */; };
 		779A9C2A2303A72A004C6575 /* TezosKitDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A9C292303A72A004C6575 /* TezosKitDemoView.swift */; };
-		779A9C2C2303B2F2004C6575 /* FundedWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A9C2B2303B2F2004C6575 /* FundedWallet.swift */; };
+		779A9C2C2303B2F2004C6575 /* Wallet+Funded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A9C2B2303B2F2004C6575 /* Wallet+Funded.swift */; };
 		779A9C2F2303B607004C6575 /* TezosKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779A9C2E2303B607004C6575 /* TezosKit.framework */; };
+		779A9C3323049784004C6575 /* String+SmartContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A9C3223049784004C6575 /* String+SmartContract.swift */; };
+		779A9C352304B2F6004C6575 /* URL+Alphanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A9C342304B2F6004C6575 /* URL+Alphanet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		779A9C1423026DF2004C6575 /* TezosKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TezosKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		779A9C1723026DF2004C6575 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		779A9C1923026DF2004C6575 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		779A9C1923026DF2004C6575 /* TezosKitDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TezosKitDemoViewController.swift; sourceTree = "<group>"; };
 		779A9C1E23026DF8004C6575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		779A9C2123026DF8004C6575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		779A9C2323026DF8004C6575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		779A9C292303A72A004C6575 /* TezosKitDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TezosKitDemoView.swift; sourceTree = "<group>"; };
-		779A9C2B2303B2F2004C6575 /* FundedWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundedWallet.swift; sourceTree = "<group>"; };
+		779A9C2B2303B2F2004C6575 /* Wallet+Funded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallet+Funded.swift"; sourceTree = "<group>"; };
 		779A9C2E2303B607004C6575 /* TezosKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TezosKit.framework; path = Carthage/Build/iOS/TezosKit.framework; sourceTree = "<group>"; };
+		779A9C3223049784004C6575 /* String+SmartContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SmartContract.swift"; sourceTree = "<group>"; };
+		779A9C342304B2F6004C6575 /* URL+Alphanet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Alphanet.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +64,12 @@
 		779A9C1623026DF2004C6575 /* TezosKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				779A9C3223049784004C6575 /* String+SmartContract.swift */,
 				779A9C1723026DF2004C6575 /* AppDelegate.swift */,
 				779A9C292303A72A004C6575 /* TezosKitDemoView.swift */,
-				779A9C2B2303B2F2004C6575 /* FundedWallet.swift */,
-				779A9C1923026DF2004C6575 /* ViewController.swift */,
+				779A9C2B2303B2F2004C6575 /* Wallet+Funded.swift */,
+				779A9C1923026DF2004C6575 /* TezosKitDemoViewController.swift */,
+				779A9C342304B2F6004C6575 /* URL+Alphanet.swift */,
 				779A9C1E23026DF8004C6575 /* Assets.xcassets */,
 				779A9C2023026DF8004C6575 /* LaunchScreen.storyboard */,
 				779A9C2323026DF8004C6575 /* Info.plist */,
@@ -180,10 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				779A9C2C2303B2F2004C6575 /* FundedWallet.swift in Sources */,
+				779A9C2C2303B2F2004C6575 /* Wallet+Funded.swift in Sources */,
 				779A9C2A2303A72A004C6575 /* TezosKitDemoView.swift in Sources */,
-				779A9C1A23026DF2004C6575 /* ViewController.swift in Sources */,
+				779A9C352304B2F6004C6575 /* URL+Alphanet.swift in Sources */,
+				779A9C1A23026DF2004C6575 /* TezosKitDemoViewController.swift in Sources */,
 				779A9C1823026DF2004C6575 /* AppDelegate.swift in Sources */,
+				779A9C3323049784004C6575 /* String+SmartContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
