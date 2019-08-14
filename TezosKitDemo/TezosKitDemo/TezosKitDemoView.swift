@@ -5,7 +5,10 @@ import UIKit
 /// Informs delegate of user interactions within the view.
 public protocol TezosKitDemoViewDelegate: class {
   func demoViewDidTapCheckBalance(_ demoView: TezosKitDemoView)
-  func demoViewDidTapInvokeContract(_ demoView: TezosKitDemoView);
+  func demoViewDidTapSendMeTezButton(_ demoView: TezosKitDemoView)
+  func demoViewDidTapInvokeContract(_ demoView: TezosKitDemoView)
+  func demoViewDidAskForStorage(_ demoView: TezosKitDemoView)
+  func demoViewDidAskToQueryConseil(_ demoView: TezosKitDemoViewDelegate)
 }
 
 /// A demo view with some buttons we can press to interact with Tezos.
@@ -18,7 +21,7 @@ public class TezosKitDemoView: UIView {
   private let addressLabel: UILabel
   private let checkBalanceButton: UIButton
   private let sendMeTezButton: UIButton
-  private let invokeContractBUtton: UIButton
+  private let invokeContractButton: UIButton
 
   /// Initialize a new view.
   public override init(frame: CGRect) {
@@ -52,11 +55,13 @@ public class TezosKitDemoView: UIView {
 
     self.addressLabel = addressLabel
     self.checkBalanceButton = checkBalanceButton
-    self.invokeContractBUtton = invokeContractButton
+    self.invokeContractButton = invokeContractButton
+    self.sendMeTezButton = sendMeTezButton
 
     stackView.frame = UIScreen.main.bounds
     stackView.addArrangedSubview(addressLabel)
     stackView.addArrangedSubview(checkBalanceButton)
+    stackView.addArrangedSubview(sendMeTezButton)
     stackView.addArrangedSubview(invokeContractButton)
 
     self.stackView = stackView

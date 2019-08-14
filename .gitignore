@@ -1,6 +1,14 @@
 
-# Created by https://www.gitignore.io/api/osx,swift
-# Edit at https://www.gitignore.io/?templates=osx,swift
+# Created by https://www.gitignore.io/api/osx,swift,carthage
+# Edit at https://www.gitignore.io/?templates=osx,swift,carthage
+
+### Carthage ###
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+Carthage/Build
 
 ### OSX ###
 # General
@@ -32,7 +40,6 @@ Temporary Items
 
 ### Swift ###
 # Xcode
-#
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## Build generated
@@ -84,7 +91,6 @@ playground.xcworkspace
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
-Carthage/Build
 
 # Accio dependency management
 Dependencies/
@@ -107,4 +113,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-# End of https://www.gitignore.io/api/osx,swift
+# End of https://www.gitignore.io/api/osx,swift,carthage

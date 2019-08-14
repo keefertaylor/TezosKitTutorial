@@ -1,0 +1,5 @@
+# .slather.yml
+
+coverage_service: cobertura_xml
+xcodeproj: TezosKit.xcodeproj
+scheme: TezosKitTests

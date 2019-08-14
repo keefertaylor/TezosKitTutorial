@@ -1,5 +1,6 @@
 // Copyright Keefer Taylor, 2019.
 
+import TezosKit
 import UIKit
 
 class ViewController: UIViewController {
@@ -28,5 +29,17 @@ extension ViewController: TezosKitDemoViewDelegate {
 
   public func demoViewDidTapInvokeContract(_ demoView: TezosKitDemoView) {
     // TODO: Demonstrate contract invoking
+  }
+
+  public func demoViewDidAskForStorage(_ demoView: TezosKitDemoView) {
+    // TODO: Demonstrate retrieving storage
+  }
+
+  public func demoViewDidTapSendMeTezButton(_ demoView: TezosKitDemoView) {
+    // TODO: Send me some tez!
+  }
+
+  public func demoViewDidAskToQueryConseil(_ demoView: TezosKitDemoViewDelegate) {
+    // TODO: Query conseil 
   }
 }

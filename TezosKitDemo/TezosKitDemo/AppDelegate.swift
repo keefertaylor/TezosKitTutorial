@@ -1,6 +1,10 @@
 // Copyright Keefer Taylor, 2019.
 import UIKit
 
+// TODO:
+// - Should probably discuss how to use Carthage?
+// - PromiseKit promises
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -12,6 +12,8 @@
 		779A9C1F23026DF8004C6575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 779A9C1E23026DF8004C6575 /* Assets.xcassets */; };
 		779A9C2223026DF8004C6575 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779A9C2023026DF8004C6575 /* LaunchScreen.storyboard */; };
 		779A9C2A2303A72A004C6575 /* TezosKitDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A9C292303A72A004C6575 /* TezosKitDemoView.swift */; };
+		779A9C2C2303B2F2004C6575 /* FundedWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A9C2B2303B2F2004C6575 /* FundedWallet.swift */; };
+		779A9C2F2303B607004C6575 /* TezosKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779A9C2E2303B607004C6575 /* TezosKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		779A9C2123026DF8004C6575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		779A9C2323026DF8004C6575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		779A9C292303A72A004C6575 /* TezosKitDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TezosKitDemoView.swift; sourceTree = "<group>"; };
+		779A9C2B2303B2F2004C6575 /* FundedWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundedWallet.swift; sourceTree = "<group>"; };
+		779A9C2E2303B607004C6575 /* TezosKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TezosKit.framework; path = Carthage/Build/iOS/TezosKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779A9C2F2303B607004C6575 /* TezosKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +43,7 @@
 		779A9C0B23026DF2004C6575 = {
 			isa = PBXGroup;
 			children = (
+				779A9C2E2303B607004C6575 /* TezosKit.framework */,
 				779A9C1623026DF2004C6575 /* TezosKitDemo */,
 				779A9C1523026DF2004C6575 /* Products */,
 			);
@@ -56,6 +62,7 @@
 			children = (
 				779A9C1723026DF2004C6575 /* AppDelegate.swift */,
 				779A9C292303A72A004C6575 /* TezosKitDemoView.swift */,
+				779A9C2B2303B2F2004C6575 /* FundedWallet.swift */,
 				779A9C1923026DF2004C6575 /* ViewController.swift */,
 				779A9C1E23026DF8004C6575 /* Assets.xcassets */,
 				779A9C2023026DF8004C6575 /* LaunchScreen.storyboard */,
@@ -74,6 +81,7 @@
 				779A9C1023026DF2004C6575 /* Sources */,
 				779A9C1123026DF2004C6575 /* Frameworks */,
 				779A9C1223026DF2004C6575 /* Resources */,
+				779A9C2D2303B409004C6575 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -129,11 +137,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		779A9C2D2303B409004C6575 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/TezosKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TezosCrypto.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Sodium.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BigInt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MnemonicKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Base58Swift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SipHash.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TezosKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PromiseKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TezosCrypto.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Sodium.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BigInt.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MnemonicKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Base58Swift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SipHash.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CryptoSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		779A9C1023026DF2004C6575 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779A9C2C2303B2F2004C6575 /* FundedWallet.swift in Sources */,
 				779A9C2A2303A72A004C6575 /* TezosKitDemoView.swift in Sources */,
 				779A9C1A23026DF2004C6575 /* ViewController.swift in Sources */,
 				779A9C1823026DF2004C6575 /* AppDelegate.swift in Sources */,
@@ -276,6 +323,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F6VXZUKN5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TezosKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -294,6 +345,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F6VXZUKN5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TezosKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
