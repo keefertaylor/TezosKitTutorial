@@ -18,7 +18,8 @@ class TezosKitDemoViewController: UIViewController {
   private let demoView: TezosKitDemoView
 
   public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    let wallet = Wallet()!
+    let mnemonic = "service return smoke bulk husband powder stove coral rose urban educate then slender recycle movie"
+    let wallet = Wallet(mnemonic: mnemonic)!
 
     demoView = TezosKitDemoView(walletAddress: wallet.address)
 
@@ -70,22 +71,39 @@ extension TezosKitDemoViewController: TezosKitDemoViewDelegate {
     tezosNodeClient.getBalance(wallet: wallet) { result in
       switch (result) {
       case .success(let balance):
-        self.showAlert(title: "Balance of \(address)", message: "\(balance)")
-      default:
+        self.showAlert(title: "Balance of \(address)", message: "\(balance.humanReadableRepresentation)")
+
+      // Log errors in case of failure.
+      case .failure(let error):
+        print("Error: \(error)")
         self.showError()
       }
     }
   }
 
   public func demoViewDidTapInvokeContract(_ demoView: TezosKitDemoView) {
-//    let michelsonParam = StringMichelsonParameter(string: "TezosKit Demo!")
-//    let operationFees = OperationFees(fee: Tez(1), gasLimit: 1000, storageLimit: 0)
-//    self.tezosNodeClient.call(contract: String.smartContractAddress, amount: Tez.zeroBalance, parameter: michelsonParam, source: wallet, signatureProvider: wallet, operationFees: operationFees) { result in
-//      switch (result) {
-//      case .success:
-//      default:
-//      }
-//    }
+    let michelsonParam = StringMichelsonParameter(string: "Hello, world.")
+    let operationFees = OperationFees(fee: Tez(1), gasLimit: 100000, storageLimit: 10000)
+
+    self.tezosNodeClient.call(
+      contract: String.smartContractAddress,
+      amount: Tez.zeroBalance,
+      parameter: michelsonParam,
+      source: wallet.address,
+      signatureProvider: wallet,
+      operationFees: operationFees
+    ) { result in
+      switch (result) {
+      case .success(let operationHash):
+        self.showAlert(title: "Called smart contract", message: "Done!")
+        print("Operation Hash: \(operationHash)")
+
+      // Log errors in case of failure.
+      case .failure(let error):
+        print("Error: \(error)")
+        self.showError()
+      }
+    }
   }
 
   public func demoViewDidAskForStorage(_ demoView: TezosKitDemoView) {
@@ -93,8 +111,11 @@ extension TezosKitDemoViewController: TezosKitDemoViewDelegate {
       switch (result) {
       case .success(let storage):
         self.showAlert(title: "Contract Storage", message: "\(storage)")
-      case.failure:
-        self.showError() 
+
+      // Log errors in case of failure.
+      case .failure(let error):
+        print("Error: \(error)")
+        self.showError()
       }
     }
   }
@@ -107,9 +128,13 @@ extension TezosKitDemoViewController: TezosKitDemoViewDelegate {
       signatureProvider: Wallet.fundedWallet
     ) { result in
       switch (result) {
-      case .success:
+      case .success(let operationHash):
         self.showAlert(title: "Sent Tez", message: "On their way!")
-      case .failure:
+        print("Operation Hash: \(operationHash)")
+
+      // Log errors in case of failure.
+      case .failure(let error):
+        print("Error: \(error)")
         self.showError()
       }
     }
