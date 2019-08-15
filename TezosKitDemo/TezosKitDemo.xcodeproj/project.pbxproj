@@ -64,17 +64,25 @@
 		779A9C1623026DF2004C6575 /* TezosKitDemo */ = {
 			isa = PBXGroup;
 			children = (
-				779A9C3223049784004C6575 /* String+SmartContract.swift */,
+				779A9C362305096C004C6575 /* Extensions */,
 				779A9C1723026DF2004C6575 /* AppDelegate.swift */,
 				779A9C292303A72A004C6575 /* TezosKitDemoView.swift */,
-				779A9C2B2303B2F2004C6575 /* Wallet+Funded.swift */,
 				779A9C1923026DF2004C6575 /* TezosKitDemoViewController.swift */,
-				779A9C342304B2F6004C6575 /* URL+Alphanet.swift */,
 				779A9C1E23026DF8004C6575 /* Assets.xcassets */,
 				779A9C2023026DF8004C6575 /* LaunchScreen.storyboard */,
 				779A9C2323026DF8004C6575 /* Info.plist */,
 			);
 			path = TezosKitDemo;
+			sourceTree = "<group>";
+		};
+		779A9C362305096C004C6575 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				779A9C342304B2F6004C6575 /* URL+Alphanet.swift */,
+				779A9C2B2303B2F2004C6575 /* Wallet+Funded.swift */,
+				779A9C3223049784004C6575 /* String+SmartContract.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
